@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Feedback/suggestions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <!-- <nav class="navbar navbar-dark bg-primary"> -->
+      <h1>Feedback/suggestions</h1>
+        <ul class = "nav navbar-nav">
+          <li><a href="https://utpal.pythonanywhere.com">Homepage</a></li>
+          <li><a href="https://utpal.pythonanywhere.com/about">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+      <h1>Please fill in the feedback/suggestions here</h1>
+      <h4>Please enter name field mandatorily. Its not mandatory to fill feedback, suggestion or enquiry fields</h4>
+      <form class="" method="POST">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" class = "btn btn-primary" value="Submit">
+        <br></br>
+        <p>Your name won't be visible here. Your feedbacks/suggestions/enquiries will be visible here. Your name won't be visible here </p>
+        <p>I'll reply here itself.</p>
+
+
+
+        <h1>Feedbacks/Suggestions/Enquiries: </h1>
+
+        {% for feed in feeds %}
+
+            <p> <strong>Feedback:</strong> {{feed.feedback_not_mandatory}} </p>
+            <p><strong>Suggestions:</strong> {{feed.suggestions_not_mandatory}}</p>
+            <p><strong>Enquiry:</strong> {{feed.Enquiry_not_madatory}}</p>
+            <p><strong>My Reply: </strong>{{feed.my_reply}}</p>
+            <p><em>Time Replied: {{feed.time}}</em></p>
+            <br></br>
+
+        {% endfor %}
+
+        <!-- {% for img in imgs %}
+        <p><strong>Image:</strong> <img src="{{feed.image.url}}" alt="csa"> </p>
+        {% endfor %} -->
+
+      </form>
+    </div>
+
+  </body>
+</html>

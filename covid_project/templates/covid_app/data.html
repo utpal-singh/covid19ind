@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>COVID-19 India Datasets</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <!-- <nav class="navbar navbar-dark bg-primary"> -->
+    <h1>COVID-19 Datasets</h1>
+      <ul class = "nav navbar-nav">
+        <!-- <li><a href="/about">About</a></li>
+        <li><a href="/data">Datasets</a></li> -->
+      </ul>
+  </nav>
+
+  <body>
+    {% for data in datas %}
+        <p>{{data.age_group_data.url}}</p>
+        <p>{{data.statewise_test_details.url}}</p>
+        <p>{{data.individual_data.url}}</p>
+    {% endfor %}
+
+    <p> <a href="https://api.covid19india.org/data.json"> National time series, statewise stats and test counts </a> </p>
+    <p> <a href="https://api.covid19india.org/state_district_wise.json"> State District Wise </a> </p>
+    <p> <a href="https://api.covid19india.org/travel_history.json"> Travel History </a> </p>
+    <p> <a href="https://api.covid19india.org/raw_data.json"> Raw Data </a> </p>
+    <p> <a href="https://api.covid19india.org/states_daily.json"> State Daily Changes </a> </p>
+    <p> <a href="https://api.covid19india.org/deaths_recoveries.json"> Deaths and Recoveries </a> </p>
+  </body>
+</html>
